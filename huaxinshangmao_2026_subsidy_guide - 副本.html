@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>广州华新商贸有限公司 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .nav-inner::-webkit-scrollbar { display: none; }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            flex-shrink: 0;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national { background: linear-gradient(135deg, #e74c3c22, #e74c3c11); color: #c0392b; border: 1px solid #e74c3c44; }
+        .badge-province { background: linear-gradient(135deg, #3498db22, #3498db11); color: #2471a3; border: 1px solid #3498db44; }
+        .badge-city { background: linear-gradient(135deg, #27ae6022, #27ae6011); color: #1e8449; border: 1px solid #27ae6044; }
+        .badge-other { background: linear-gradient(135deg, #8e44ad22, #8e44ad11); color: #6c3483; border: 1px solid #8e44ad44; }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .biz-card .biz-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; margin-bottom: 14px;
+        }
+        .biz-card h4 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .biz-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+        /* ===== Desktop Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover { background: #f0f5ff; }
+        tbody tr:last-child td { border-bottom: none; }
+        .level-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 12px;
+            font-size: 12px; font-weight: 600; white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount { font-weight: 700; color: var(--accent); font-size: 15px; }
+        .category-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #f0f0f0; color: #555;
+        }
+
+        /* ===== V12: Honor Tag ===== */
+        .honor-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #f0e6ff, #e8daff);
+            color: #6c3483;
+            border: 1px solid #d4b8e8;
+            white-space: nowrap;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block; padding: 2px 7px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #e8f4fd; color: #2471a3;
+            margin: 1px 2px; white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Mobile Card View ===== */
+        .mobile-cards { display: none; }
+
+        .m-project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .m-project-card .m-card-header {
+            padding: 16px 18px 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .m-project-card .m-card-header .m-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            flex: 1;
+        }
+        .m-project-card .m-card-header .m-seq {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--accent);
+            color: white; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .m-project-card .m-card-body { padding: 4px 18px 16px; }
+        .m-field {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .m-field:last-child { border-bottom: none; }
+        .m-field .m-label {
+            min-width: 80px;
+            max-width: 80px;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 600;
+            padding-top: 2px;
+            flex-shrink: 0;
+        }
+        .m-field .m-value {
+            flex: 1;
+            color: var(--text);
+            word-break: break-word;
+        }
+        .m-field .m-value.amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+            width: 3px; background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 24px; padding: 18px 24px;
+            background: var(--card-bg); border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -26px; top: 24px;
+            width: 14px; height: 14px; background: var(--accent);
+            border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .timeline-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+        .timeline-item p { font-size: 13px; color: var(--text-light); }
+        .status-done { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #27ae6022; color: #27ae60; font-weight: 600; }
+        .status-progress { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #f39c1222; color: #f39c12; font-weight: 600; }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info);
+            font-size: 13px; transition: all 0.2s; word-break: break-all;
+        }
+        .policy-ref a:hover { color: var(--primary); border-bottom-style: solid; }
+        .policy-card a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info); transition: all 0.2s;
+        }
+        .policy-card a:hover { color: var(--primary); border-bottom-style: solid; }
+        .ext-icon { display: inline-block; font-size: 10px; margin-left: 2px; opacity: 0.6; }
+
+        /* ===== Roadmap ===== */
+        .roadmap { margin-top: 24px; }
+        .roadmap-quarter {
+            display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px; font-size: 14px; font-weight: 700; color: var(--primary);
+            padding-top: 6px; text-align: center; background: white; border-radius: 8px;
+            padding: 8px 4px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items { flex: 1; display: flex; flex-wrap: wrap; gap: 8px; }
+        .roadmap-item {
+            padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+            border: 1px solid; line-height: 1.5; max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px; margin-top: 20px;
+        }
+        .unit-card {
+            background: white; border-radius: 10px; padding: 18px 20px;
+            border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .unit-card .unit-count {
+            font-size: 24px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .unit-card .unit-desc { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+        /* ===== Lifecycle Bar ===== */
+        .lifecycle-bar {
+            margin-top: 20px; padding: 20px 24px; background: #f8f9fc;
+            border-radius: 10px; border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 { font-size: 14px; color: var(--primary); margin-bottom: 16px; font-weight: 600; }
+        .lifecycle-steps { display: flex; gap: 0; position: relative; }
+        .lifecycle-step { flex: 1; text-align: center; position: relative; padding: 0 4px; }
+        .lifecycle-step .bar { height: 8px; border-radius: 4px; margin-bottom: 10px; }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .lifecycle-step .step-pct {
+            font-size: 18px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        /* ===== Contact Bar ===== */
+        .contact-bar {
+            margin-top: 20px; padding: 16px 28px; background: white;
+            border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border); display: flex;
+            align-items: center; gap: 28px; flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px; font-weight: 700; color: var(--primary);
+            white-space: nowrap; padding-right: 12px; border-right: 2px solid var(--border);
+        }
+        .contact-bar-name { font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: 1px; }
+        .contact-bar-info { font-size: 13px; color: var(--text); }
+        .contact-bar-info .cb-label { color: var(--text-light); margin-right: 4px; }
+        .contact-bar-info a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 15px; }
+        .contact-bar-info a:hover { color: var(--accent); }
+        .contact-bar-sep { width: 1px; height: 28px; background: var(--border); }
+
+        /* ===== Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px; padding-top: 32px; border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px; font-weight: 600; color: var(--text-light);
+            margin-bottom: 16px; text-align: center; letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px; border-radius: 12px; overflow: hidden;
+            background: var(--card-bg); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px; cursor: pointer; font-size: 16px; font-weight: 600;
+            color: var(--primary); display: flex; align-items: center; gap: 12px;
+            list-style: none; border-left: 4px solid var(--accent); transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6'; font-size: 12px; color: var(--accent);
+            transition: transform 0.3s; flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary { border-bottom: 1px solid var(--border); background: #f8f9fc; }
+        .collapse-section .collapse-body { padding: 24px 28px; animation: fadeSlideIn 0.3s ease; }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary); color: rgba(255,255,255,0.7);
+            text-align: center; padding: 24px; font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .mobile-cards { display: none !important; }
+        }
+
+        /* ================================================================
+           RESPONSIVE BREAKPOINTS
+           ================================================================ */
+
+        /* ===== Tablet & Small Desktop (<=1024px) ===== */
+        @media (max-width: 1024px) {
+            .container { padding: 20px 20px 48px; }
+            .header-inner { padding: 16px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+            .header h1 { font-size: 20px; }
+            .header h1 span { display: block; margin-left: 0; margin-top: 4px; font-size: 14px; }
+            .header-meta { font-size: 12px; }
+            .nav-inner { padding: 0 12px; }
+            .nav a { padding: 12px 16px; font-size: 13px; }
+
+            /* Hide desktop table, show mobile cards */
+            .table-wrapper { display: none; }
+            .mobile-cards { display: block; }
+
+            .section-title { font-size: 18px; }
+            .section-title .icon { width: 28px; height: 28px; font-size: 14px; }
+
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .stat-card { padding: 18px; }
+            .stat-card .stat-num { font-size: 28px; }
+
+            .roadmap-quarter { flex-direction: column; gap: 8px; }
+            .roadmap-label {
+                min-width: auto; text-align: left; padding: 8px 14px;
+                display: flex; gap: 8px; align-items: center;
+            }
+            .roadmap-item { max-width: 100%; }
+
+            .unit-summary { grid-template-columns: repeat(2, 1fr); }
+
+            .card { padding: 20px 22px; }
+            .collapse-section summary { padding: 16px 20px; font-size: 15px; }
+            .collapse-section .collapse-body { padding: 20px; }
+            .timeline { padding-left: 24px; }
+            .timeline-item { padding: 14px 18px; }
+        }
+
+        /* ===== Mobile (<=768px) ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px 12px 40px; }
+            .header-inner { padding: 14px 16px; }
+            .header h1 { font-size: 18px; }
+            .header h1 span { font-size: 13px; }
+            .nav-inner { padding: 0 8px; }
+            .nav a { padding: 10px 14px; font-size: 12px; }
+
+            .section { margin-bottom: 28px; }
+            .section-title { font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; }
+
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+            .stat-card { padding: 14px 10px; }
+            .stat-card .stat-num { font-size: 24px; }
+            .stat-card .stat-label { font-size: 11px; }
+
+            .filter-bar { gap: 6px; margin-bottom: 16px; }
+            .filter-btn { padding: 6px 14px; font-size: 12px; min-height: 40px; }
+
+            .m-project-card { margin-bottom: 14px; }
+            .m-project-card .m-card-header { padding: 14px 14px 10px; }
+            .m-project-card .m-card-header .m-title { font-size: 14px; }
+            .m-project-card .m-card-body { padding: 2px 14px 14px; }
+            .m-field { padding: 8px 0; font-size: 13px; }
+            .m-field .m-label { min-width: 70px; max-width: 70px; font-size: 11px; }
+
+            .roadmap-quarter { margin-bottom: 10px; }
+            .roadmap-items { gap: 6px; }
+            .roadmap-item { font-size: 11px; padding: 6px 10px; }
+
+            .unit-summary { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .unit-card { padding: 14px 16px; }
+            .unit-card .unit-count { font-size: 20px; }
+            .unit-card .unit-name { font-size: 12px; }
+            .unit-card .unit-desc { font-size: 11px; }
+
+            .card { padding: 18px 16px; border-radius: 10px; }
+            .card h3 { font-size: 15px; margin-bottom: 10px; }
+            .card p { font-size: 14px; line-height: 1.75; }
+
+            .contact-bar {
+                flex-direction: column; align-items: flex-start;
+                gap: 10px; padding: 14px 18px;
+            }
+            .contact-bar-sep { display: none; }
+            .contact-bar-name { font-size: 16px; }
+
+            .lifecycle-bar { padding: 16px 14px; }
+            .lifecycle-step .step-label { font-size: 11px; }
+            .lifecycle-step .step-pct { font-size: 15px; }
+
+            .info-grid { grid-template-columns: 1fr; gap: 12px; }
+            .info-item { padding: 16px 18px; }
+            .info-item .value { font-size: 14px; }
+
+            .biz-grid { grid-template-columns: 1fr; gap: 12px; }
+
+            .badge-group { gap: 6px; }
+            .badge { padding: 6px 12px; font-size: 12px; }
+
+            .collapse-section summary { padding: 14px 16px; font-size: 14px; }
+            .collapse-section .collapse-body { padding: 16px; }
+
+            .timeline { padding-left: 20px; }
+            .timeline::before { left: 6px; }
+            .timeline-item { padding: 12px 16px; margin-bottom: 16px; }
+            .timeline-item::before { left: -20px; width: 12px; height: 12px; top: 20px; }
+
+            .footer { padding: 18px 12px; font-size: 12px; }
+        }
+
+        /* ===== Small Mobile (<=480px) ===== */
+        @media (max-width: 480px) {
+            .container { padding: 12px 8px 32px; }
+            .header-inner { padding: 12px 12px; }
+            .header h1 { font-size: 16px; }
+            .header h1 span { font-size: 12px; }
+            .header-meta { font-size: 11px; }
+            .nav a { padding: 10px 12px; font-size: 11px; }
+
+            .section-title { font-size: 15px; gap: 8px; }
+            .section-title .icon { width: 24px; height: 24px; font-size: 12px; border-radius: 6px; }
+
+            .stats-bar { gap: 8px; margin-bottom: 16px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-card .stat-num { font-size: 20px; }
+            .stat-card .stat-label { font-size: 10px; }
+
+            .filter-btn { padding: 5px 10px; font-size: 11px; min-height: 36px; }
+
+            .m-project-card .m-card-header { padding: 12px 12px 8px; }
+            .m-project-card .m-card-header .m-title { font-size: 13px; }
+            .m-project-card .m-card-body { padding: 0 12px 12px; }
+            .m-field { padding: 7px 0; font-size: 12px; }
+            .m-field .m-label { min-width: 62px; max-width: 62px; font-size: 10px; }
+            .m-field .m-value.amount { font-size: 14px; }
+
+            .roadmap-label { padding: 6px 10px; font-size: 12px; }
+            .roadmap-item { font-size: 10px; padding: 5px 8px; }
+
+            .unit-summary { grid-template-columns: 1fr; }
+
+            .card { padding: 14px 12px; }
+            .card h3 { font-size: 14px; }
+            .card p { font-size: 13px; }
+
+            .lifecycle-step .step-label { font-size: 10px; }
+            .lifecycle-step .step-pct { font-size: 14px; }
+
+            .contact-bar { padding: 12px 14px; }
+            .contact-bar-title { font-size: 13px; }
+            .contact-bar-name { font-size: 15px; }
+            .contact-bar-info { font-size: 12px; }
+
+            .info-item { padding: 14px 14px; }
+            .info-item .label { font-size: 10px; }
+            .info-item .value { font-size: 13px; }
+
+            .badge { padding: 5px 10px; font-size: 11px; }
+            .badge-group { gap: 5px; }
+
+            .collapse-section summary { padding: 12px 14px; font-size: 13px; gap: 8px; }
+            .collapse-section .collapse-body { padding: 14px 12px; }
+
+            .timeline { padding-left: 16px; }
+            .timeline-item { padding: 10px 12px; }
+            .timeline-item .year { font-size: 12px; }
+            .timeline-item h4 { font-size: 13px; }
+            .timeline-item p { font-size: 12px; }
+
+            .footer { font-size: 11px; padding: 16px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>广州华新商贸有限公司 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年8月5日 &nbsp;|&nbsp; 首批国家5A级综合服务型物流企业 &middot; 广州市重点供应链服务企业</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ═══ 首屏核心板块 ═══ -->
+
+    <!-- ===== 1. 可申报项目清单 ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">7</div>
+                <div class="stat-label">可申报项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~2150</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">3</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">4</div>
+                <div class="stat-label">省/市/区级项目（含1个荣誉类）</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+            <button class="filter-btn" onclick="filterTable('district')">区级</button>
+        </div>
+
+        <!-- 桌面端：数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-level="national">
+                        <td data-label="序号">1</td>
+                        <td data-label="项目名称"><strong>全国供应链创新与应用示范企业</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">供应链创新</span></td>
+                        <td data-label="归口部门">商务部等8单位</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">下半年（8-10月）</td>
+                        <td data-label="预计奖补" class="amount"><span class="honor-tag">荣誉类项目</span></td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">供应链协同平台</span>
+                            <span class="tech-tag sw">智慧物流系统</span>
+                            <span class="tech-tag ai">大数据分析</span>
+                        </td>
+                        <td data-label="核心条件">1.具有供应链创新实践及行业影响力；2.具备完善的供应链管理体系和技术平台；3.近三年无违法违规及失信记录；4.由省级商务主管部门审核推荐</td>
+                        <td data-label="所需材料">申报表、申报书正文、评价指标表、供应链创新实践佐证材料、审计报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="http://www.mofcom.gov.cn/gztz/art/2023/art_acce21a84dd04b53b25db8573315275d.html" target="_blank" rel="noopener">商务部等8单位关于开展全国供应链创新与应用示范城市和示范企业申报工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td data-label="序号">2</td>
+                        <td data-label="项目名称"><strong>超长期特别国债物流设备更新专项</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">设备更新</span></td>
+                        <td data-label="归口部门">国家发展改革委</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">全年多批次</td>
+                        <td data-label="预计奖补" class="amount">500-800</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">自动化分拣系统</span>
+                            <span class="tech-tag hw">AGV/堆垛机</span>
+                            <span class="tech-tag hw">新能源物流车辆</span>
+                        </td>
+                        <td data-label="核心条件">1.设备更新投资额达标（固定资产投资≥200万元）；2.项目投资完成率、设备投资进度≤80%；3.物流设施设备智慧化、绿色化更新方向；4.无失信记录</td>
+                        <td data-label="所需材料">项目备案文件、设备购置合同及发票、投资完成情况说明、设备更新方案、资金申请报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.gov.cn/zhengce/content/202403/content_6939232.htm" target="_blank" rel="noopener">国务院《推动大规模设备更新和消费品以旧换新行动方案》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td data-label="序号">3</td>
+                        <td data-label="项目名称"><strong>城乡冷链和国家物流枢纽建设中央预算内投资专项</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">物流枢纽</span></td>
+                        <td data-label="归口部门">国家发展改革委</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">Q1-Q2（省发改委组织）</td>
+                        <td data-label="预计奖补" class="amount">500-800</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">智慧仓储设施</span>
+                            <span class="tech-tag sw">WMS/TMS系统</span>
+                            <span class="tech-tag sw">供应链平台</span>
+                        </td>
+                        <td data-label="核心条件">1.项目位于国家物流枢纽承载城市（广州）；2.已完成备案并开工建设，投资进度≤80%；3.纳入国家重大建设项目库储备；4.智慧物流园区/枢纽设施方向；5.前期手续齐全</td>
+                        <td data-label="所需材料">项目备案文件、规划及施工许可手续、投资完成情况证明、可行性研究报告、项目入库证明</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="http://fgw.trs.gov.cn/zcfg_500454/zcjd/202107/t20210716_69027732.html" target="_blank" rel="noopener">《城乡冷链和国家物流枢纽建设中央预算内投资专项管理办法》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td data-label="序号">4</td>
+                        <td data-label="项目名称"><strong>广东省促进经济高质量发展专项资金（培育商贸流通领军企业方向）</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">企业培育</span></td>
+                        <td data-label="归口部门">广东省商务厅</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">按年度指南（Q2-Q3）</td>
+                        <td data-label="预计奖补" class="amount">100-200</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">供应链管理</span>
+                            <span class="tech-tag sw">数字化分销网络</span>
+                        </td>
+                        <td data-label="核心条件">1.营收规模及行业影响力居前的商贸流通领军企业；2.在粤稳定经营并持续贡献；3.财务制度健全、信用记录良好；4.符合年度申报指南支持方向</td>
+                        <td data-label="所需材料">企业审计报告、纳税证明、经营业绩说明、行业地位佐证材料、申报表</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="http://sw.gz.gov.cn/gkmlpt/content/9/9125/mpost_9125451.html" target="_blank" rel="noopener">广州市商务局关于拨付省级促进经济高质量发展专项资金（培育商贸流通领军企业方向）的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">5</td>
+                        <td data-label="项目名称"><strong>广州市现代物流与供应链智能化升级项目补助</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">智能化升级</span></td>
+                        <td data-label="归口部门">广州市商务局/市交通运输局</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">按年度申报指南</td>
+                        <td data-label="预计奖补" class="amount">200-400</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">智慧物流信息平台</span>
+                            <span class="tech-tag hw">自动化分拣设备</span>
+                            <span class="tech-tag ai">大数据调度优化</span>
+                        </td>
+                        <td data-label="核心条件">1.在广州市注册的物流与供应链企业；2.实施智能化升级项目（智慧物流系统、自动化设备、数字化平台等）；3.按投资额20%给予补助，最高1000万元；4.项目已实施或在建</td>
+                        <td data-label="所需材料">项目投资方案、设备及软件购置合同和发票、项目实施报告、专项审计报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="http://www.panyu.gov.cn/fzzs/cyzc/content/post_10144011.html" target="_blank" rel="noopener">《广州市进一步支持现代物流与供应链高质量发展的若干措施》（穗府办规〔2025〕1号）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">6</td>
+                        <td data-label="项目名称"><strong>广州市现代商贸流通体系建设项目（中央资金）</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">数字化转型</span></td>
+                        <td data-label="归口部门">广州市商务局</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">按年度批次通知</td>
+                        <td data-label="预计奖补" class="amount">200-300</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">数字供应链平台</span>
+                            <span class="tech-tag sw">统仓统配系统</span>
+                            <span class="tech-tag ai">智能补货算法</span>
+                        </td>
+                        <td data-label="核心条件">1.在广州注册的独立法人企业；2.批发零售企业数字化转型及升级改造、统仓统配、数字供应链平台方向；3.项目投资额不低于500万元；4.按不超过投资额40%补助，最高2000万元</td>
+                        <td data-label="所需材料">项目申报书、投资明细及审计凭证、项目实施方案、营业执照及相关资质证明</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10233813.html" target="_blank" rel="noopener">广州市商务局关于开展现代商贸流通体系建设项目申报工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="district">
+                        <td data-label="序号">7</td>
+                        <td data-label="项目名称"><strong>白云区促进现代物流发展企业培育壮大奖励</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">企业培育</span></td>
+                        <td data-label="归口部门">广州市白云区人民政府</td>
+                        <td data-label="申报层级"><span class="level-tag level-district">区级</span></td>
+                        <td data-label="申报周期">按年度申报通知</td>
+                        <td data-label="预计奖补" class="amount">100-200</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">数字供应链系统</span>
+                            <span class="tech-tag hw">智慧仓储运营</span>
+                        </td>
+                        <td data-label="核心条件">1.以白云区注册经营主体申报（华新供应链科技公司，华新广州国际智慧物流港项目主体）；2.年营业收入达2亿/5亿/20亿元台阶且保持增长；3.依法经营，无重大安全事故及违法记录</td>
+                        <td data-label="所需材料">营业执照、财务审计报告、纳税证明、营收增长说明、申请表</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.by.gov.cn/zsyz/yhzc/bdzc/content/post_10723903.html" target="_blank" rel="noopener">《广州市白云区关于促进现代物流发展的若干措施》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 移动端：卡片视图 -->
+        <div class="mobile-cards" id="mobileCards">
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">1</div>
+                    <div class="m-title">全国供应链创新与应用示范企业</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">供应链创新</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">商务部等8单位</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">下半年（8-10月）</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value"><span class="honor-tag">荣誉类项目</span></div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">供应链协同平台</span>
+                        <span class="tech-tag sw">智慧物流系统</span>
+                        <span class="tech-tag ai">大数据分析</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.具有供应链创新实践及行业影响力；2.具备完善的供应链管理体系和技术平台；3.近三年无违法违规及失信记录；4.由省级商务主管部门审核推荐</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">申报表、申报书正文、评价指标表、供应链创新实践佐证材料、审计报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="http://www.mofcom.gov.cn/gztz/art/2023/art_acce21a84dd04b53b25db8573315275d.html" target="_blank" rel="noopener">商务部等8单位关于开展全国供应链创新与应用示范城市和示范企业申报工作的通知<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">2</div>
+                    <div class="m-title">超长期特别国债物流设备更新专项</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">设备更新</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">国家发展改革委</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">全年多批次</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">500-800万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">自动化分拣系统</span>
+                        <span class="tech-tag hw">AGV/堆垛机</span>
+                        <span class="tech-tag hw">新能源物流车辆</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.设备更新投资额达标（固定资产投资≥200万元）；2.项目投资完成率、设备投资进度≤80%；3.物流设施设备智慧化、绿色化更新方向；4.无失信记录</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目备案文件、设备购置合同及发票、投资完成情况说明、设备更新方案、资金申请报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.gov.cn/zhengce/content/202403/content_6939232.htm" target="_blank" rel="noopener">国务院《推动大规模设备更新和消费品以旧换新行动方案》<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">3</div>
+                    <div class="m-title">城乡冷链和国家物流枢纽建设中央预算内投资专项</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">物流枢纽</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">国家发展改革委</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">Q1-Q2（省发改委组织）</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">500-800万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">智慧仓储设施</span>
+                        <span class="tech-tag sw">WMS/TMS系统</span>
+                        <span class="tech-tag sw">供应链平台</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.项目位于国家物流枢纽承载城市（广州）；2.已完成备案并开工建设，投资进度≤80%；3.纳入国家重大建设项目库储备；4.智慧物流园区/枢纽设施方向；5.前期手续齐全</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目备案文件、规划及施工许可手续、投资完成情况证明、可行性研究报告、项目入库证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="http://fgw.trs.gov.cn/zcfg_500454/zcjd/202107/t20210716_69027732.html" target="_blank" rel="noopener">《城乡冷链和国家物流枢纽建设中央预算内投资专项管理办法》<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">4</div>
+                    <div class="m-title">广东省促进经济高质量发展专项资金（培育商贸流通领军企业方向）</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">企业培育</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">广东省商务厅</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">按年度指南（Q2-Q3）</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">100-200万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">供应链管理</span>
+                        <span class="tech-tag sw">数字化分销网络</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.营收规模及行业影响力居前的商贸流通领军企业；2.在粤稳定经营并持续贡献；3.财务制度健全、信用记录良好；4.符合年度申报指南支持方向</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">企业审计报告、纳税证明、经营业绩说明、行业地位佐证材料、申报表</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="http://sw.gz.gov.cn/gkmlpt/content/9/9125/mpost_9125451.html" target="_blank" rel="noopener">广州市商务局关于拨付省级促进经济高质量发展专项资金（培育商贸流通领军企业方向）的通知<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">5</div>
+                    <div class="m-title">广州市现代物流与供应链智能化升级项目补助</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">智能化升级</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">广州市商务局/市交通运输局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">按年度申报指南</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">200-400万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">智慧物流信息平台</span>
+                        <span class="tech-tag hw">自动化分拣设备</span>
+                        <span class="tech-tag ai">大数据调度优化</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.在广州市注册的物流与供应链企业；2.实施智能化升级项目（智慧物流系统、自动化设备、数字化平台等）；3.按投资额20%给予补助，最高1000万元；4.项目已实施或在建</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目投资方案、设备及软件购置合同和发票、项目实施报告、专项审计报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="http://www.panyu.gov.cn/fzzs/cyzc/content/post_10144011.html" target="_blank" rel="noopener">《广州市进一步支持现代物流与供应链高质量发展的若干措施》（穗府办规〔2025〕1号）<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">6</div>
+                    <div class="m-title">广州市现代商贸流通体系建设项目（中央资金）</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">数字化转型</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">广州市商务局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">按年度批次通知</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">200-300万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">数字供应链平台</span>
+                        <span class="tech-tag sw">统仓统配系统</span>
+                        <span class="tech-tag ai">智能补货算法</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.在广州注册的独立法人企业；2.批发零售企业数字化转型及升级改造、统仓统配、数字供应链平台方向；3.项目投资额不低于500万元；4.按不超过投资额40%补助，最高2000万元</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目申报书、投资明细及审计凭证、项目实施方案、营业执照及相关资质证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10233813.html" target="_blank" rel="noopener">广州市商务局关于开展现代商贸流通体系建设项目申报工作的通知<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <div class="m-project-card" data-level="district">
+                <div class="m-card-header">
+                    <div class="m-seq">7</div>
+                    <div class="m-title">白云区促进现代物流发展企业培育壮大奖励</div>
+                    <span class="level-tag level-district">区级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">企业培育</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">广州市白云区人民政府</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">按年度申报通知</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">100-200万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">数字供应链系统</span>
+                        <span class="tech-tag hw">智慧仓储运营</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.以白云区注册经营主体申报（华新供应链科技公司，华新广州国际智慧物流港项目主体）；2.年营业收入达2亿/5亿/20亿元台阶且保持增长；3.依法经营，无重大安全事故及违法记录</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">营业执照、财务审计报告、纳税证明、营收增长说明、申请表</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.by.gov.cn/zsyz/yhzc/bdzc/content/post_10723903.html" target="_blank" rel="noopener">《广州市白云区关于促进现代物流发展的若干措施》<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">7-9月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 全国供应链创新与应用示范企业<br><span style="opacity:0.7">8-10月 | 商务部等8单位</span></div>
+                        <div class="roadmap-item national"><strong>&#9313;</strong> 超长期特别国债物流设备更新专项<br><span style="opacity:0.7">全年多批次 | 国家发改委</span></div>
+                        <div class="roadmap-item province"><strong>&#9314;</strong> 广东省商贸流通领军企业专项资金<br><span style="opacity:0.7">按年度指南 | 省商务厅</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q4<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">10-12月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item city"><strong>&#9315;</strong> 广州市物流与供应链智能化升级补助<br><span style="opacity:0.7">按年度指南 | 市商务局</span></div>
+                        <div class="roadmap-item city"><strong>&#9316;</strong> 广州市现代商贸流通体系建设项目<br><span style="opacity:0.7">按批次通知 | 市商务局</span></div>
+                        <div class="roadmap-item district"><strong>&#9317;</strong> 白云区物流企业培育壮大奖励<br><span style="opacity:0.7">按年度通知 | 白云区政府</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">2027Q1<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">提前谋划</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9318;</strong> 中央预算内投资物流枢纽专项<br><span style="opacity:0.7">Q1-Q2申报 | 省发改委组织</span></div>
+                        <div class="roadmap-item national"><strong>&#9319;</strong> 超长期特别国债下一批次储备<br><span style="opacity:0.7">1-2月首批 | 国家发改委</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item city"><strong>&#9320;</strong> 华新广州国际智慧物流港项目纳入国家重大建设项目库储备<br><span style="opacity:0.7">非储不报，尽早完成入库</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">国家发展改革委</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">国债设备更新 / 物流枢纽专项</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">商务部</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">供应链创新与应用示范企业</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">广东省商务厅</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">商贸流通领军企业培育</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">广州市商务局</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">智能化升级 / 商贸流通体系</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">白云区人民政府</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">物流企业培育壮大奖励</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="http://www.mofcom.gov.cn/gztz/art/2023/art_acce21a84dd04b53b25db8573315275d.html" target="_blank" rel="noopener">商务部等8单位关于开展全国供应链创新与应用示范城市和示范企业申报工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.gov.cn/zhengce/content/202403/content_6939232.htm" target="_blank" rel="noopener">国务院《推动大规模设备更新和消费品以旧换新行动方案》（国发〔2024〕7号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="http://fgw.trs.gov.cn/zcfg_500454/zcjd/202107/t20210716_69027732.html" target="_blank" rel="noopener">国家发展改革委《城乡冷链和国家物流枢纽建设中央预算内投资专项管理办法》<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>广东省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="http://sw.gz.gov.cn/gkmlpt/content/9/9125/mpost_9125451.html" target="_blank" rel="noopener">广州市商务局关于拨付省级促进经济高质量发展专项资金（消费枢纽建设事项培育商贸流通领军企业方向）的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>广州市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="http://www.panyu.gov.cn/fzzs/cyzc/content/post_10144011.html" target="_blank" rel="noopener">《广州市进一步支持现代物流与供应链高质量发展的若干措施》（穗府办规〔2025〕1号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10233813.html" target="_blank" rel="noopener">广州市商务局关于开展现代商贸流通体系建设第二批项目申报工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 区级 -->
+        <div class="card policy-card">
+            <h3>广州市白云区政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.by.gov.cn/zsyz/yhzc/bdzc/content/post_10723903.html" target="_blank" rel="noopener">《广州市白云区关于促进现代物流发展的若干措施》<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 固定板块 ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注商务部、国家发展改革委、广东省商务厅、广州市商务局、广州市交通运输局及白云区人民政府的年度申报通知，提前做好材料准备。预计奖补金额为基于公开政策及企业实际投资规模的保守预估值，可能因政策调整而变化。标注为"荣誉类项目"的条目以获得资质认定为主要价值，直接资金奖励较少。
+            </p>
+            <!-- ▼▼▼ ⚠️ 固定板块：项目申报全生命周期 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ ⚠️ 固定板块：项目咨询联系人 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ═══ 折叠面板区域 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>广州华新商贸有限公司始创于1990年，是以广州华新（集团）贸易有限公司为基础，由广州华新集团有限公司联合日本住友商事株式会社、日本加藤产业株式会社等投资者共同投资设立的大型商贸流通企业。公司是国内领先的快消品（FMCG）市场分销及供应链一体化综合服务商，也是华南地区规模最大的商贸流通企业之一，服务网络覆盖珠三角并辐射全国。</p>
+                    <p style="margin-top: 12px;">公司拥有完善的智慧物流系统和专业的供应链管理模式，运用大数据技术实现供应链一体化协同管理，是首批国家5A级综合服务型物流企业、2022年度广州市重点供应链服务企业（首批12家）。公司目前正投资建设"华新广州国际智慧物流港"项目（位于白云区石湖供应链创新产业园），打造集智慧仓储、分拣配送、供应链服务于一体的标杆智慧物流园区。公司拥有13项软件著作权，经营范围涵盖软件产品开发与生产，具备较强的数字化自主研发能力。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">广州华新商贸有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">始创年份</div>
+                        <div class="value">1990年</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地</div>
+                        <div class="value">广东省广州市（海珠区）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">冯耀良</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">员工规模</div>
+                        <div class="value">约428人（2024年年报）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">企业性质</div>
+                        <div class="value">有限责任公司（外资背景）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">行业定位</div>
+                        <div class="value">快消品分销与供应链一体化服务</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">纳税信用</div>
+                        <div class="value">A级纳税人（2024）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所属集团</div>
+                        <div class="value">广州华新集团有限公司</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务（折叠） -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>公司专注于快消品（FMCG）市场分销与供应链一体化服务，代理分销众多国内外知名快消品牌，业务覆盖食品饮料、日化用品等多个品类，为商超、便利店、电商及餐饮等全渠道客户提供从品牌分销、仓储管理、运输配送到数据服务的全链条解决方案。公司与日本住友商事、加藤产业等国际商社深度合作，具备进出口双向流通服务能力。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#128722;</div>
+                        <h4>快消品品牌分销</h4>
+                        <p>代理分销众多国内外知名快消品牌，覆盖食品、饮料、日化等多品类，华南地区分销网络规模领先</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#128666;</div>
+                        <h4>供应链一体化服务</h4>
+                        <p>提供仓储管理、运输配送、渠道运营、库存优化等一体化供应链服务，服务商超、便利店、电商等全渠道</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#128187;</div>
+                        <h4>智慧物流平台</h4>
+                        <p>自主研发智慧物流信息系统，拥有13项软件著作权，运用大数据实现供应链协同管理与智能调度</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8f4;">&#127959;</div>
+                        <h4>物流园区运营</h4>
+                        <p>投资建设华新广州国际智慧物流港（白云区石湖供应链创新产业园），打造智慧仓储与分拣配送标杆园区</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 首批国家5A级综合服务型物流企业</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-city">&#127941; 广州市重点供应链服务企业（2022年首批）</span>
+                        <span class="badge badge-city">&#127941; A级纳税人（2024）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>其他资质</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-other">&#128196; 软件著作权13项</span>
+                        <span class="badge badge-other">&#128196; 企业品牌项目1项</span>
+                        <span class="badge badge-other">&#128196; 非许可类医疗器械经营资质</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请（折叠） -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目申请情况（2023-2026）</summary>
+            <div class="collapse-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2022年6月</div>
+                        <h4>广州市重点供应链服务企业认定（首批）</h4>
+                        <p>获广州市商务局等六部门联合认定为广州市首批12家重点供应链服务企业之一，为华南地区商贸流通领域代表企业 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2022年9月</div>
+                        <h4>华新广州国际智慧物流港项目开工</h4>
+                        <p>位于白云区大源街石湖供应链创新产业园（AB1309074地块），由集团关联公司广州华新供应链科技有限公司投资建设，打造智慧物流标杆园区 <span class="status-progress">在建</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>纳税信用A级评定</h4>
+                        <p>获评2024年度纳税信用A级企业，体现规范经营与良好信用记录 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025-2026年</div>
+                        <h4>华新广州国际智慧物流港分期建设推进</h4>
+                        <p>项目多栋建筑进入规划验收及竣工验收阶段（2栋、5栋、13-15栋等），部分栋号仍在建设推进中，园区即将全面投入运营 <span class="status-progress">在建</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    广州华新商贸有限公司 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年8月5日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格 + 卡片 层级筛选（同步桌面和移动端）
+    function filterTable(level) {
+        // 桌面端表格
+        const tableRows = document.querySelectorAll('#projectTable tbody tr');
+        tableRows.forEach(row => {
+            row.style.display = (level === 'all' || row.dataset.level === level) ? '' : 'none';
+        });
+        // 移动端卡片
+        const mobileCards = document.querySelectorAll('#mobileCards .m-project-card');
+        mobileCards.forEach(card => {
+            card.style.display = (level === 'all' || card.dataset.level === level) ? '' : 'none';
+        });
+        // 按钮状态
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // 3. 滚动监听 (Scroll Spy)
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
